@@ -1,0 +1,16 @@
+.main {
+  padding-top: 60px;
+}
+
+.product-container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.product-container {
+  padding: 40px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+}
+.product-img {
+  width: 75%;
+}

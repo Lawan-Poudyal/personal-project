@@ -1,0 +1,10 @@
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  color: black;
+  margin-bottom: 10000px;
+}
+
+input:focus {
+  outline: 3px solid rgb(254, 189, 105);
+}
