@@ -4,13 +4,114 @@
 
 .product-container-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
 }
+@media (max-width: 2000px) {
+  .product-container-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+@media (max-width: 1600px) {
+  .product-container-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 1300px) {
+  .product-container-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  .product-container-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .product-container-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .product-container-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  .product-container-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* 
+@media (min-width:701 ) and (max-width:) {
+    
+} */
 .product-container {
   padding: 40px 25px 25px 25px;
   display: flex;
   flex-direction: column;
+
+  border-right: 1px solid rgb(231, 231, 231);
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  margin-bottom: 20px;
 }
 .product-img {
-  width: 75%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-title {
+  height: 40px;
+  margin-bottom: 5px;
+}
+.product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 10px;
+}
+.product-rating-star {
+  width: 100px;
+  margin-right: 6px;
+}
+
+.product-rating-count {
+  margin-top: 3px;
+}
+.product-price {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.product-quantity {
+  margin-bottom: 17px;
+}
+.product-spacer {
+  flex: 1;
+}
+
+.added-to-cart {
+  color: rgb(6, 125, 98);
+  margin-bottom: 8px;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  opacity: 0;
+}
+
+.added-to-cart img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.add-to-cart-button {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 50px;
 }
