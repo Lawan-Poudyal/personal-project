@@ -32,11 +32,12 @@ body {
   margin-bottom: 22px;
   font-weight: 700;
 }
-.cart-item-container,
+.cart-item,
 .payment-summary {
   border: 1px solid gray;
   padding: 18px;
   border-radius: 4px;
+  margin-bottom: 12px;
 }
 .cart-item-details {
   display: grid;
