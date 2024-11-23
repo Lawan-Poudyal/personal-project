@@ -69,7 +69,14 @@ body {
 .update-link {
   margin-left: 3px;
 }
+.quantity-input {
+  width: 30px;
+}
 
+.quantity-input,
+.save-quantity-link {
+  display: none;
+}
 .delivery-option-title {
   font-weight: 700;
 }
@@ -148,4 +155,13 @@ body {
   .delivery-option-container {
     grid-column: 1 / span 2;
   }
+}
+
+.is-editing-quantity .quantity-input,
+.is-editing-quantity .save-quantity-link {
+  display: initial;
+}
+
+.is-editing-quantity .update-link {
+  display: none;
 }

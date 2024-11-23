@@ -2,6 +2,7 @@ import {
   cart,
   deleteFromCart,
   calculateCartQuantity,
+  updateQuantity,
 } from "../scripts/data/cart.js";
 import { product } from "../scripts/data/products.js";
 import { formatMoney } from "../scripts/utilities/money.js";
@@ -36,10 +37,17 @@ cart.forEach((cartItem) => {
         )}</div>
         <div class="product-quantity-container">
           <span
-            >Quantity: <span class="product-quantity">${
-              cartItem.quantity
-            } </span>
-            <span class="update-link link-primary js-update-link">Update </span>
+            >Quantity: <span class="product-quantity js-product-quantity-${
+              matchingProduct.id
+            }">${cartItem.quantity} </span>
+            <span class="update-link link-primary js-update-link" data-product-id=${
+              matchingProduct.id
+            }>Update </span>
+            <input class="quantity-input js-quantity-input-${
+              matchingProduct.id
+            } "/> <span class="save-quantity-link link-primary js-save-quantity-link" data-product-id=${
+    matchingProduct.id
+  }>Save</span>
             <span class="delete-link link-primary js-delete-link" data-product-id=${
               matchingProduct.id
             }>Delete</span>
@@ -97,3 +105,37 @@ function displayCartQuantity() {
     ".js-cart-quantity"
   ).innerHTML = `${cartQuantity} items`;
 }
+
+document.querySelectorAll(".js-update-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    const { productId } = link.dataset;
+    document
+      .querySelector(`.js-cart-item-${productId}`)
+      .classList.add("is-editing-quantity");
+  });
+});
+
+document.querySelectorAll(".js-save-quantity-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    const { productId } = link.dataset;
+
+    const newQuantity = Number(
+      document.querySelector(`.js-quantity-input-${productId}`).value
+    );
+    if (newQuantity <= 0 || newQuantity >= 100) {
+      alert("Quantity must be at least 0 and less than 100");
+      return;
+    }
+    updateQuantity(productId, newQuantity);
+
+    const container = document.querySelector(`.js-cart-item-${productId}`);
+    container.classList.remove("is-editing-quantity");
+
+    const productQuantity = document.querySelector(
+      `.js-product-quantity-${productId}`
+    );
+    productQuantity.innerHTML = newQuantity;
+
+    displayCartQuantity();
+  });
+});
