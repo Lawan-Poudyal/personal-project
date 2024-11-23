@@ -1,3 +1,6 @@
+import { cart, updateCart, updateCartQuantity } from "../scripts/data/cart.js";
+import { product } from "../scripts/data/products.js";
+
 let productsHTML = ``;
 
 product.forEach((product) => {
@@ -9,7 +12,7 @@ product.forEach((product) => {
             />
           </div>
 
-          <div class="product-title">${product.name}</div>
+          <div class="product-title limit-to-2-lines">${product.name}</div>
           <div class="product-rating">
             <img
               src="../images/ratings/rating-${product.rating.stars * 10}.png"
@@ -48,32 +51,13 @@ document.querySelector(".js-product-container-grid").innerHTML = productsHTML;
 
 document.querySelectorAll(".js-add-to-cart-button").forEach((button) => {
   button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
+    const { productId } = button.dataset;
 
     const selectorQuantity = Number(
       document.querySelector(`.js-quantity-selector-${productId}`).value
     );
 
-    let matchingItem;
-
-    cart.forEach((item) => {
-      if (productId === item.productId) {
-        matchingItem = item;
-      }
-    });
-
-    if (matchingItem) {
-      matchingItem.quantity += selectorQuantity;
-    } else {
-      cart.push({ productId, quantity: selectorQuantity });
-    }
-
-    let cartQuantity = 0;
-
-    cart.forEach((item) => {
-      cartQuantity += item.quantity;
-    });
-
-    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+    updateCart(productId, selectorQuantity);
+    updateCartQuantity();
   });
 });
