@@ -16,7 +16,7 @@ body {
 .page-title {
   font-size: 22px;
   margin-bottom: 18px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .checkout-grid {
   display: grid;
@@ -26,11 +26,11 @@ body {
   align-items: start;
 }
 .delivery-date {
-  color: green;
+  color: rgb(0, 118, 0);
   font-size: 19px;
   margin-top: 5px;
   margin-bottom: 22px;
-  font-weight: bold;
+  font-weight: 700;
 }
 .cart-item-container,
 .payment-summary {
@@ -50,4 +50,97 @@ body {
 
   margin-left: auto;
   margin-right: auto;
+}
+
+.product-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.product-price {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.update-link {
+  margin-left: 3px;
+}
+
+.delivery-option-title {
+  font-weight: 700;
+}
+.delivery-option {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.delivery-option-container input {
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.delivery-option-date {
+  color: rgb(0, 118, 0);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.delivery-option-price {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
+.payment-summary-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.payment-summary-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  font-size: 15px;
+  margin-bottom: 9px;
+}
+.payment-summary-money {
+  text-align: right;
+}
+.subtotal-row .payment-summary-money {
+  border-top: 1px solid rgb(222, 222, 222);
+}
+.subtotal-row div {
+  padding-top: 9px;
+}
+.total-row {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  border-top: 1px solid rgb(222, 222, 222);
+  padding-top: 18px;
+  font-size: 18px;
+}
+.place-order-button {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  margin-top: 11px;
+  margin-bottom: 15px;
+}
+@media (max-width: 1000px) {
+  .main {
+    max-width: 500px;
+  }
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+  .payment-summary {
+    grid-row: 1;
+    margin-bottom: 12px;
+  }
+  .cart-item-details {
+    grid-template-columns: 100px 1fr;
+    row-gap: 30px;
+  }
+  .delivery-option-container {
+    grid-column: 1 / span 2;
+  }
 }

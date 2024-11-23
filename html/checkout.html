@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CheckoutLawan</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
-    /> -->
+    />
 
     <link rel="stylesheet" href="../styles/checkout/checkout-header.css" />
     <link rel="stylesheet" href="../styles/general.css" />
@@ -63,13 +63,80 @@
                   src="../images/products/black-2-slot-toaster.jpg"
                   class="product-image"
                 />
-                <div></div>
+                <div>
+                  <div class="product-name limit-to-2-lines">
+                    Black and Gray Athletic Cotton Socks - 6 Pairs
+                  </div>
+                  <div class="product-price">$10.90</div>
+                  <div class="product-quantity-container">
+                    <span
+                      >Quantity: <span class="product-quantity">2 </span>
+                      <span class="update-link">Update </span>
+                      <span class="delete-link">Delete</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="delivery-option-container">
+                  <div class="delivery-option-title">
+                    Choose a delivery option:
+                  </div>
+                  <div class="delivery-option">
+                    <input type="radio" checked />
+                    <div>
+                      <div class="delivery-option-date">Tuesday, June 21</div>
+                      <div class="delivery-option-price">FREE Shipping</div>
+                    </div>
+                  </div>
+                  <div class="delivery-option">
+                    <input type="radio" checked />
+                    <div>
+                      <div class="delivery-option-date">Tuesday, June 21</div>
+                      <div class="delivery-option-price">FREE Shipping</div>
+                    </div>
+                  </div>
+                  <div class="delivery-option">
+                    <input type="radio" checked />
+                    <div>
+                      <div class="delivery-option-date">Tuesday, June 21</div>
+                      <div class="delivery-option-price">FREE Shipping</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="payment-summary"></div>
+          <div class="payment-summary">
+            <div class="payment-summary-title">Order Summary</div>
+            <div class="payment-summary-row">
+              <div>Item (<span class="">3</span>):</div>
+              <div class="payment-summary-money">$42.75</div>
+            </div>
+            <div class="payment-summary-row">
+              <div>Shipping & handling:</div>
+              <div class="payment-summary-money">$4.99</div>
+            </div>
+            <div class="payment-summary-row subtotal-row">
+              <div>Total before tax:</div>
+              <div class="payment-summary-money">$42.75</div>
+            </div>
+            <div class="payment-summary-row">
+              <div>Estimated tax(10%):</div>
+              <div class="payment-summary-money">$42.75</div>
+            </div>
+            <div class="payment-summary-row total-row">
+              <div>Order total:</div>
+              <div class="payment-summary-money">$42.75</div>
+            </div>
+            <div>
+              <button class="place-order-button button-primary">
+                Place your order
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
+
+    <script type="module" src="../scripts/checkout.js"></script>
   </body>
 </html>
