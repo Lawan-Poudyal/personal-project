@@ -62,6 +62,10 @@ body {
   font-weight: 700;
   margin-bottom: 5px;
 }
+.update-link,
+.delete-link {
+  cursor: pointer;
+}
 .update-link {
   margin-left: 3px;
 }

@@ -47,3 +47,11 @@ select {
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
 }
+
+.link-primary {
+  cursor: pointer;
+  color: rgb(1, 124, 182);
+}
+.link-primary:hover {
+  color: rgb(196, 80, 0);
+}
