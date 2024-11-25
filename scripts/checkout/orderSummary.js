@@ -112,10 +112,11 @@ export function renderOrderSummary() {
       const container = document.querySelector(`.js-cart-item-${productId}`);
       container.classList.remove("is-editing-quantity");
 
-      const productQuantity = document.querySelector(
-        `.js-product-quantity-${productId}`
-      );
-      productQuantity.innerHTML = newQuantity;
+      // const productQuantity = document.querySelector(
+      //   `.js-product-quantity-${productId}`
+      // );
+      // productQuantity.innerHTML = newQuantity;
+
       renderPaymentSummary();
       renderOrderSummary();
       renderCheckoutHeader();
