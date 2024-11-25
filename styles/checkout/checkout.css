@@ -156,7 +156,9 @@ body {
     grid-column: 1 / span 2;
   }
 }
-
+.quantity-input {
+  width: 30px;
+}
 .is-editing-quantity .quantity-input,
 .is-editing-quantity .save-quantity-link {
   display: initial;
