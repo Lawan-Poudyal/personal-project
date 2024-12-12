@@ -4,7 +4,6 @@ import {
   calculateCartQuantity,
 } from "../scripts/data/cart.js";
 import { product } from "../scripts/data/products.js";
-import { formatMoney } from "../scripts/utilities/money.js";
 
 let productsHTML = ``;
 displayCartQuantity();
@@ -21,12 +20,12 @@ product.forEach((product) => {
           <div class="product-title limit-to-2-lines">${product.name}</div>
           <div class="product-rating">
             <img
-              src="../images/ratings/rating-${product.rating.stars * 10}.png"
+              src="${product.getStarURL()}"
               class="product-rating-star"
             />
             <span class="product-rating-count">${product.rating.count}</span>
           </div>
-          <div class="product-price">$${formatMoney(product.priceCents)}</div>
+          <div class="product-price">${product.getPrice()}</div>
           <div class="product-quantity">
             <select class=js-quantity-selector-${product.id}>
               <option value="1">1</option>

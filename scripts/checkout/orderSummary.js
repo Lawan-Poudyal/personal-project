@@ -41,9 +41,7 @@ export function renderOrderSummary() {
           <div class="product-name limit-to-2-lines">
             ${matchingProduct.name}
           </div>
-          <div class="product-price">$${formatMoney(
-            matchingProduct.priceCents
-          )}</div>
+          <div class="product-price">${matchingProduct.getPrice()}</div>
           <div class="product-quantity-container">
             <span
               >Quantity: <span class="product-quantity js-product-quantity-${
